@@ -1,4 +1,6 @@
-export default function makeCard(pokemon){
+import pokedex from '../data/pokedex.js';
+
+function makeCard(pokemon){
     
     const pokeCase = pokemon.pokemon.charAt(0).toUpperCase() + pokemon.pokemon.slice(1);
     const html = /*html*/`
@@ -12,4 +14,14 @@ export default function makeCard(pokemon){
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+
+const pokeList = document.getElementById('pokedex-container');
+
+export default function loadPokedex(){
+    pokedex.forEach(pokemon => {
+        const dom = makeCard(pokemon);
+        pokeList.appendChild(dom);
+    });
 }

@@ -1,9 +1,5 @@
-import makeCard from './pokedex-component.js';
-import pokedex from '../data/pokedex.js';
+import loadPokedex from '../src/pokedex-component.js';
+import loadPaging from './paging-components.js';
+loadPokedex();
+loadPaging(801);
 
-const pokeList = document.getElementById('pokedex-container');
-
-pokedex.forEach(pokemon => {
-    const dom = makeCard(pokemon);
-    pokeList.appendChild(dom);
-});
