@@ -3,11 +3,12 @@ const test = QUnit.test;
 QUnit.module('image-component test');
 
 function makeCard(pokemon){
+    const pokeCase = pokemon.pokemon.charAt(0).toUpperCase() + pokemon.pokemon.slice(1);
     const html = /*html*/`
     <li>
-    <h3>Bulbasaur</h3>
-    <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
-    <p><span>HP:</span><span>A:</span><span>D:</span></p></li>
+    <h3>${pokeCase}</h3>
+    <img src="${pokemon.url_image}">
+    <p>HP: ${pokemon.hp} A: ${pokemon.attack} D: ${pokemon.defense}</p></li>
 `;
     const template = document.createElement('template');
     template.innerHTML = html;
@@ -30,7 +31,7 @@ test('vuild image template', function(assert) {
             <li>
                 <h3>Bulbasaur</h3>
                 <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
-                <p><span>HP:</span><span>A:</span><span>D:</span></p></li>
+                <p>HP: 45 A: 49 D: 49</p></li>
  `;
     //assert
     
