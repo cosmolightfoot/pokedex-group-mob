@@ -1,0 +1,21 @@
+#pokedex-container {
+    border: 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+img {
+    height: auto;
+    width: 100px;
+
+}
+
+li {
+    border: 2px solid pink;
+    background-color: firebrick;
+    list-style-type: none;
+    margin: 10px;
+    width: 110px;
+}
