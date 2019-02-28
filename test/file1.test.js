@@ -18,7 +18,7 @@ test('vuild image template', function(assert) {
     //act
     const template = makeCard(pokemon);
     const expected = /*html*/`
-            <li class="grass">
+            <li class="grass" style="background-color:${pokemon.color_1}">
                 <h3>Bulbasaur</h3>
                 <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
                 <p>HP: 45 A: 49 D: 49</p></li>
@@ -35,7 +35,7 @@ test('add class that is same as type', assert => {
     const template = makeCard(pokemon);
 
     const expected = /*html*/`
-    <li class="grass">
+    <li class="grass" style="background-color:${pokemon.color_1}">
         <h3>Bulbasaur</h3>
         <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
         <p>HP: 45 A: 49 D: 49</p></li>
