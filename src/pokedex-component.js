@@ -17,9 +17,12 @@ function makeCard(pokemon){
 }
 
 
-const pokeList = document.getElementById('pokedex-container');
 
-export default function loadPokedex(){
+export default function loadPokedex(pokedex){
+    const pokeList = document.getElementById('pokedex-container');
+    while(pokeList.children.length > 0) {
+        pokeList.lastElementChild.remove();
+    }
     pokedex.forEach(pokemon => {
         const dom = makeCard(pokemon);
         pokeList.appendChild(dom);
